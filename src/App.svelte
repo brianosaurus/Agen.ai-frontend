@@ -1,15 +1,19 @@
 <script>
   import { getImages } from './api';
+  import { Circle3 } from 'svelte-loading-spinners';
 
   let constraintKeywords = "";
   let imageConstraints = "";
   let subject = "";
   let images = "";
+  let showSpinner = false;
 
   async function handleSubmit() {
+    showSpinner = true;
     try {
       images = await getImages(constraintKeywords, imageConstraints, subject);
       images = images.data;
+      showSpinner = false;
     } catch (err) {
       console.error(err);
     }
@@ -35,6 +39,9 @@
 
     <div>
       <button class="button" on:click={handleSubmit}>Get Images</button>
+      {#if showSpinner}
+        <Circle3  style="align: center"/>
+      {/if}
     </div>
 
     {#if images}
