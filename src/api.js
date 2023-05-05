@@ -1,6 +1,7 @@
 import { request } from 'jsonrpc-lite';
 
-const apiUrl = 'http://localhost:8080/api'; // Replace with your backend server URL
+console.log(window.location.protocol)
+const apiUrl = `${window.location.protocol}/api`; 
 
 export async function getImages(constraintKeywords, imageConstraints, subject) {
   const payload = {
