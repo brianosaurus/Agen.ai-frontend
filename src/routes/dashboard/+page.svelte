@@ -1,59 +1,9 @@
 <script>
-  import { getImages } from './api';
+  import { getImages } from '$lib/api';
   import { Circle3 } from 'svelte-loading-spinners';
 
-  let constraintKeywords = "";
-  let imageConstraints = "";
-  let subject = "";
-  let images = "";
-  let showSpinner = false;
-
-  async function handleSubmit() {
-    showSpinner = true;
-    try {
-      images = await getImages(constraintKeywords, imageConstraints, subject);
-      images = images.data;
-      showSpinner = false;
-    } catch (err) {
-      console.error(err);
-    }
-  }
-</script>
-
 <main>
-  <div class="container" style="display:block; clear:both">
-    <div>
-      <h2>Constraint Keywords</h2>
-      <textarea class="textarea" bind:value={constraintKeywords}></textarea>
-    </div>
-
-    <div>
-      <h2>Image Constraints</h2>
-      <textarea class="textarea" bind:value={imageConstraints}></textarea>
-    </div>
-
-    <div>
-      <h2>Subject</h2>
-      <input class="input" type="text" bind:value={subject} />
-    </div>
-
-    <div>
-      <button class="button" on:click={handleSubmit}>Get Images</button>
-      {#if showSpinner}
-        <Circle3  style="align: center"/>
-      {/if}
-    </div>
-
-    {#if images}
-      <div class="image-gallery">
-        {#each images as image}
-          <img src={image.url} alt="ai"/>
-        {/each}
-      </div>
-    {/if}
-  </div>
-
-
+  <h2>Dashboard</h2>
 </main>
 
 <style>

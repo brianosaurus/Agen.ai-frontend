@@ -6,7 +6,6 @@
 </div>
 
 <script>
-    
   import { browser } from '$app/environment'
   import GoogleSignInButton from "$lib/GoogleSignInButton.svelte";
 </script>
