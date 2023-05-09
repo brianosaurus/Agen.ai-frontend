@@ -7,20 +7,12 @@
   import { invalidateAll, goto } from '$app/navigation';
   import { onMount } from 'svelte';
   import { PUBLIC_GOOGLE_CLIENT_ID } from '$env/static/public';
-  import { decodeJwtResponse } from '$lib/jwt';
   import { deserialize } from '$app/forms';
 
-  function CredResponse(response: any) {
-      console.log("Handle Credential Response", response)
-
-      // decodeJwtResponse() is a custom function defined by you
-      // to decode the credential response.
-      const responsePayload = decodeJwtResponse(response.credential);
-
-      console.log("Response Payload", responsePayload)
-      getJWTFromServer(response.credential)
-
-      goto('/campaign')
+  const CredResponse = async (response: any) => {
+    const credential = response.credential;
+    await getJWTFromServer(credential);
+    goto('/campaign'); 
   };
 
   async function getJWTFromServer(credential: string) {
@@ -28,16 +20,13 @@
     formData.append('credential', credential);
 
     try {
-      console.log("getJWTFromServer")
       const response = await fetch('?/login', {
           method: 'POST',
           body: formData,
           credentials: 'include' // Send cookies along with the request
       });
 
-      console.log("response", response)
       const result = deserialize(await response.text());
-      console.log("result", result)
 
       if (result.type === 'success') {
           // re-run all `load` functions, following the successful update

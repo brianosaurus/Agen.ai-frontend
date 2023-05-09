@@ -3,7 +3,7 @@ import { OAuth2Client } from 'google-auth-library';
 import { GOOGLE_CLIENT_SECRET } from '$env/static/private';
 import { PUBLIC_GOOGLE_CLIENT_ID } from '$env/static/public';
 import { JWT_SECRET  } from '$env/static/private';
-import { decodeJwtResponse } from '$lib/jwt.js';
+import { decodeJwt} from '$lib/jwt.js';
 import { createJWTToken } from '$lib/jwt.server.js';
 import { error } from '@sveltejs/kit';
 
@@ -24,7 +24,7 @@ async function verifyGoogleToken(token: string) {
       audience: PUBLIC_GOOGLE_CLIENT_ID,
     });
 
-    return decodeJwtResponse(token)
+    return decodeJwt(token)
   } catch (err) {
     throw error(400, 'Invalid Token')
   }
@@ -46,9 +46,10 @@ export const actions = {
     const token = createJWTToken(user);
 
     cookies.set('session', token, {
-      sameSite: 'strict',
+      sameSite: 'lax',
       secure: true,
-      httpOnly: true,
+      httpOnly: false,
+      domain: 'localhost',
       path: '/',
       maxAge: 60 * 60 * 24 * 7, // 1 week
     });

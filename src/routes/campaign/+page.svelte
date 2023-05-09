@@ -1,6 +1,12 @@
-<script>
+<script lang="ts">
   import { getImages } from '$lib/api';
   import { RingLoader } from 'svelte-loading-spinners';
+  import { isExpired } from '$lib/security';
+  import { goto } from '$app/navigation';
+
+  if (isExpired()) {
+    goto('/error');
+  }
 
   let subject = "";
   let images = "";
@@ -17,6 +23,7 @@
     }
   }
 </script>
+
 
 <main>
   <div class="container" style="display:block; clear:both">
