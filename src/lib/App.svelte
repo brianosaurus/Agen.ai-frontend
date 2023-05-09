@@ -1,16 +1,6 @@
 <!-- App.svelte -->
 <script>
-  import Home from './Home.svelte';
-
-  console.log("App.svelte)
-
-  let userLoggedIn = false;
-  window.onLoadCallback = () => {
-    userLoggedIn = gapi.auth2.getAuthInstance().isSignedIn.get();
-    if (userLoggedIn) {  
-      // Handle login
-    }
-  }
+  import { goto } from '$app/navigation';
+  console.log("App.svelte");
+  goto('/home');
 </script>
-
-<Home />

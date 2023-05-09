@@ -1,7 +1,3 @@
-<script>
-  import { getImages } from '$lib/api';
-  import { Circle3 } from 'svelte-loading-spinners';
-
 <main>
   <h2>Dashboard</h2>
 </main>

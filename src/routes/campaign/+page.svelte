@@ -1,9 +1,7 @@
 <script>
   import { getImages } from '$lib/api';
-  import { Circle3 } from 'svelte-loading-spinners';
+  import { RingLoader } from 'svelte-loading-spinners';
 
-  let constraintKeywords = "";
-  let imageConstraints = "";
   let subject = "";
   let images = "";
   let showSpinner = false;
@@ -23,16 +21,6 @@
 <main>
   <div class="container" style="display:block; clear:both">
     <div>
-      <h2>Constraint Keywords</h2>
-      <textarea class="textarea" bind:value={constraintKeywords}></textarea>
-    </div>
-
-    <div>
-      <h2>Image Constraints</h2>
-      <textarea class="textarea" bind:value={imageConstraints}></textarea>
-    </div>
-
-    <div>
       <h2>Subject</h2>
       <input class="input" type="text" bind:value={subject} />
     </div>
@@ -40,7 +28,9 @@
     <div>
       <button class="button" on:click={handleSubmit}>Get Images</button>
       {#if showSpinner}
-        <Circle3  style="align: center"/>
+        <div class="spinner-container">
+          <RingLoader class="spinner" />
+        </div>
       {/if}
     </div>
 
@@ -57,6 +47,15 @@
 </main>
 
 <style>
+  .spinner-container {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust the height as needed */
+  }
+
   .container {
     overflow: hidden;
     display: block;
@@ -81,24 +80,6 @@
     max-width: 70%;
     height: auto;
   }
-   .textarea {
-    border: none;
-    border-radius: 4px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
-    font-size: 16px;
-    padding: 10px 20px;
-    width: 100%;
-    height: 200px;
-    margin-bottom: 10px;
-    resize: vertical;
-    height: 80px;
-  }
-
-  .textarea:focus {
-    outline: none;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-  }
-
   .input {
     border: none;
     border-radius: 4px;

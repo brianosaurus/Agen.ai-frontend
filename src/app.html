@@ -9,26 +9,4 @@
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents">%sveltekit.body%</div>
 	</body>
-  <script src="https://accounts.google.com/gsi/client"></script>
-	<script>
-		window.handleCredentialResponse = (response) => {
-			// decodeJwtResponse() is a custom function defined by you
-			// to decode the credential response.
-			responsePayload = decodeJwtResponse(response.credential);
-
-			$lib/addOrUpdateUser(responsePayload.sub, responsePayload.name, 
-				responsePayload.given_name, responsePayload.family_name, 
-				responsePayload.picture, responsePayload.email);
-
-			window.location.href = "/dashboard";
-	}
-	function decodeJwtResponse(token) {
-        let base64Url = token.split('.')[1]
-        let base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-        let jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
-            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-        }).join(''));
-        return JSON.parse(jsonPayload)
-    }
-	</script>
 </html>

@@ -14,6 +14,7 @@
 		"format": "prettier --plugin-search-dir . --write ."
 	},
 	"devDependencies": {
+		"@ethercorps/sveltekit-redis-session": "^0.2.0",
 		"@playwright/test": "^1.28.1",
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/kit": "^1.5.0",
@@ -22,6 +23,7 @@
 		"eslint": "^8.28.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte": "^2.26.0",
+		"ioredis": "^5.3.2",
 		"prettier": "^2.8.0",
 		"prettier-plugin-svelte": "^2.8.1",
 		"svelte": "^3.54.0",
@@ -33,7 +35,13 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@sveltejs/adapter-node": "^1.2.4",
+		"cookie": "^0.5.0",
 		"gapi": "^0.0.3",
-		"svelte-loading-spinners": "^0.3.4"
+		"google-auth-library": "^8.8.0",
+		"jsonwebtoken": "^9.0.0",
+		"redis": "^4.6.6",
+		"svelte-loading-spinners": "^0.3.4",
+		"uuid": "^9.0.0"
 	}
 }
