@@ -1,3 +1,5 @@
+<script lang="ts">
+</script>
 <!-- Home.svelte -->
 <div class="home">
   <img src="Agen.png" alt="Agen.ai Logo" class="logo">

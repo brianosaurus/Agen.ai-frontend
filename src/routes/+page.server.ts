@@ -49,7 +49,6 @@ export const actions = {
       sameSite: 'lax',
       secure: true,
       httpOnly: false,
-      domain: 'localhost',
       path: '/',
       maxAge: 60 * 60 * 24 * 7, // 1 week
     });

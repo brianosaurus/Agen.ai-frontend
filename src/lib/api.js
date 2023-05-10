@@ -3,11 +3,11 @@ import { dev } from '$app/environment';
 const apiUrl = dev ? 'http://localhost:5555/api' : 'https://bianosaurus.com/api';
 
 
-export async function getImages(constraintKeywords, imageConstraints, subject) {
+export async function getImages(prompt) {
   const payload = {
     jsonrpc: '2.0',
     method: 'generate_image',
-    params: { constraintKeywords: constraintKeywords, imageConstraints: imageConstraints, subject: subject },
+    params: { constraintKeywords: '', imageConstraints: '', subject: prompt },
     id: 1,
   };
 
