@@ -35,7 +35,7 @@
 <Header />
 
 <main>
-  <div class="container" style="position: fixed; inset: 0; display: flex; justify-content: center; ">
+  <div class="container" style="">
     <div>
       <div>
       <h2>Create Campaign</h2>
@@ -67,7 +67,7 @@
 
 <style>
   .blurb {
-    margin-left: 0; 
+    margin-left: -10px; 
     padding-left: 0; 
     margin-top: 0; 
     display: block; 
@@ -86,10 +86,12 @@
   }
 
   .container {
-    /* padding-left: 15%; */
+    padding-left: 15%;
     width: 100%;
     display: flex;
     justify-content: center;
+    position: fixed; 
+    inset: 0; 
   }
 
   .container div {
@@ -99,15 +101,15 @@
     flex-direction: column;
   }
 
-.image-gallery {
-  position: absolute;
-  top: 25%;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  justify-content: center;
-  align-items: center;
-}
+  .image-gallery {
+    position: absolute;
+    top: 25%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+  }
   .image-gallery img {
     max-width: 18%;
     height: auto;
@@ -126,7 +128,7 @@
     margin-bottom: 1rem;
   }
 
-  @media (max-width: 1170px) and (max-height: 2532px) {
+  @media (max-width: 390px) and (max-height: 844px) {
     .image-gallery img {
       max-width: 25%;
       height: auto;
@@ -135,11 +137,10 @@
     .container { 
       padding-left: 0;
       margin-left: 10px;
-      margin-top: -35px;
+      margin-top: -50px;
       width: 80%;
     }
     .blurb {
-      margin-left: -10px;
       display: flex;
       flex-direction: wrap;
     }

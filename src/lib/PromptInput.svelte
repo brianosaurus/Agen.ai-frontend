@@ -58,12 +58,9 @@
     opacity: var(--input-value-empty, 1);
   }
 
-  @media (max-width: 1170px) and (max-height: 2532px) {
+  @media (max-width: 390px) and (max-height: 844px) {
     .input-field {
       width: 250px;
-    }
-    .input-placeholder {
-      left: 5px;
     }
   }
 </style>
