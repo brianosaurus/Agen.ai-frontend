@@ -57,6 +57,15 @@
     transition: opacity 0.2s;
     opacity: var(--input-value-empty, 1);
   }
+
+  @media (max-width: 1170px) and (max-height: 2532px) {
+    .input-field {
+      width: 250px;
+    }
+    .input-placeholder {
+      left: 5px;
+    }
+  }
 </style>
 
 <div class="input-box">

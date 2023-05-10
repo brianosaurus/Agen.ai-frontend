@@ -18,8 +18,10 @@
     const value = event.detail;
 
     if (value !== '') {
+
       showSpinner = true;
       try {
+        console.log('getting images', value)
         images = await getImages(value);
         images = images.data;
         showSpinner = false;
@@ -38,7 +40,9 @@
       <div>
       <h2>Create Campaign</h2>
       <PromptInput on:submit={handleSubmit} />
-      <div style="margin-left:0; padding-left: 0; margin-top: 0; display:block; width:500px;" class="blurb">Use the prompt to search for creative </div>
+      <div class="blurb">
+        Use the prompt to search for creative 
+      </div>
     </div>
     </div>
   </div>
@@ -62,6 +66,13 @@
 
 
 <style>
+  .blurb {
+    margin-left: 0; 
+    padding-left: 0; 
+    margin-top: 0; 
+    display: block; 
+    width: 500px;
+  }
   h2 {
     margin-bottom: 1rem;
     width: 600px;
@@ -75,7 +86,7 @@
   }
 
   .container {
-    padding-left: 15%;
+    /* padding-left: 15%; */
     width: 100%;
     display: flex;
     justify-content: center;
@@ -97,12 +108,6 @@
   justify-content: center;
   align-items: center;
 }
-  /* .image-gallery {
-    width: 100%;
-    display: flex;
-    flex-direction: wrap;
-  } */
-
   .image-gallery img {
     max-width: 18%;
     height: auto;
@@ -119,6 +124,25 @@
 
   h2 {
     margin-bottom: 1rem;
+  }
+
+  @media (max-width: 1170px) and (max-height: 2532px) {
+    .image-gallery img {
+      max-width: 25%;
+      height: auto;
+      border-radius: 20%;
+    }
+    .container { 
+      padding-left: 0;
+      margin-left: 10px;
+      margin-top: -35px;
+      width: 80%;
+    }
+    .blurb {
+      margin-left: -10px;
+      display: flex;
+      flex-direction: wrap;
+    }
   }
 </style>
 

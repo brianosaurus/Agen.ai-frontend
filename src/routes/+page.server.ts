@@ -12,7 +12,8 @@ const whitelist = [
   'greyjello@gmail.com',
   '12bscsssiddiqui@seecs.edu.pk',
   'keith@hoerling.com',
-  'brianav8r@gmail.com'
+  'brianav8r@gmail.com',
+  'phattytuna@gmail.com'
 ]
 
 async function verifyGoogleToken(token: string) {
@@ -30,6 +31,7 @@ async function verifyGoogleToken(token: string) {
 
 export const actions = {
   login: async ({cookies, request}) => {
+    console.log('login')
     const data = await request.formData();
     const credential: any = data.get('credential');
     const user = await verifyGoogleToken(credential);

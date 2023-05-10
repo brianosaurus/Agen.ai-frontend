@@ -10,6 +10,9 @@
   import { deserialize } from '$app/forms';
 
   const CredResponse = async (response: any) => {
+    console.log(response)
+    console.log('credential: ', response.credential)
+
     const credential = response.credential;
     await getJWTFromServer(credential);
     goto('/campaign'); 
@@ -27,6 +30,8 @@
       });
 
       const result = deserialize(await response.text());
+
+      console.log('result: ', result)
 
       if (result.type === 'success') {
           // re-run all `load` functions, following the successful update
