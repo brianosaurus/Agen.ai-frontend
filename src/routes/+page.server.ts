@@ -1,9 +1,7 @@
-import { v4 as uuidv4 } from 'uuid';
 import { OAuth2Client } from 'google-auth-library';
 import { GOOGLE_CLIENT_SECRET } from '$env/static/private';
 import { PUBLIC_GOOGLE_CLIENT_ID } from '$env/static/public';
-import { JWT_SECRET  } from '$env/static/private';
-import { decodeJwt} from '$lib/jwt.js';
+import { decodeJwt } from '$lib/jwt.js';
 import { createJWTToken } from '$lib/jwt.server.js';
 import { error } from '@sveltejs/kit';
 

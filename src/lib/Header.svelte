@@ -21,7 +21,7 @@
 
 {#if picture != '' && picture != undefined}
   <div class="right-image-container">
-    <img src={picture} alt="profile picture" referrerpolicy="no-referrer" />
+    <img src={picture} alt="profile avitar" referrerpolicy="no-referrer" />
   </div>
 {/if}
 
