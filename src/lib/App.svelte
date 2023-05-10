@@ -1,5 +1,5 @@
 <!-- App.svelte -->
-<script>
+<script lang="ts" module>
   import { goto } from '$app/navigation';
   goto('/home');
 </script>

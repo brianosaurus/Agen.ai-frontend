@@ -1,4 +1,4 @@
-<script lang="ts">
+<script lang="ts" module>
 </script>
 <!-- Home.svelte -->
 <div class="home">

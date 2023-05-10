@@ -2,7 +2,7 @@
   <script src="https://accounts.google.com/gsi/client" async defer></script>
 </svelte:head>
 
-<script lang="ts">
+<script lang="ts" module>
   import { error } from '@sveltejs/kit';
   import { invalidateAll, goto } from '$app/navigation';
   import { onMount } from 'svelte';
