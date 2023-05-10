@@ -41,7 +41,7 @@
       <h2>Create Campaign</h2>
       <PromptInput on:submit={handleSubmit} />
       <div class="blurb">
-        Use the prompt to search for creative 
+        Use the prompt to generate creative 
       </div>
     </div>
     </div>
@@ -143,6 +143,9 @@
     .blurb {
       display: flex;
       flex-direction: wrap;
+    }
+    .spinner-container {
+      left: 40%;
     }
   }
 </style>
