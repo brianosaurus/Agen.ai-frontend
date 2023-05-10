@@ -1,4 +1,4 @@
-<script lang="ts">
+<script lang="ts" module>
   import { browser } from '$app/environment';
   import { decodeJwt } from './jwt';
 

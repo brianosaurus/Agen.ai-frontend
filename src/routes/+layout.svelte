@@ -1,6 +1,3 @@
-<script lang="ts">
-</script>
-
 <style>
   main { 
     background-color: #f2f2f2;

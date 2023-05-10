@@ -1,4 +1,4 @@
-<script lang="ts">
+<script lang="ts" module>
   import { isExpired } from "$lib/security";
   import { goto } from "$app/navigation";
 

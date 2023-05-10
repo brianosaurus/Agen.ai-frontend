@@ -1,4 +1,4 @@
-<script lang="ts">
+<script lang="ts" module>
   import { getImages } from '$lib/api';
   import { RingLoader } from 'svelte-loading-spinners';
   import { isExpired } from '$lib/security';
