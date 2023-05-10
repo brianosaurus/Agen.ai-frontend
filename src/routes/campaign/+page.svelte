@@ -6,11 +6,6 @@
   import PromptInput from '$lib/PromptInput.svelte';
   import Header from '$lib/Header.svelte';
 
-  function handleInputSubmit(value) {
-    // Handle the input submission here
-    console.log('Submitted value:', value);
-  }
-
   if (isExpired()) {
     goto('/error');
   }
@@ -19,7 +14,10 @@
   let images = "";
   let showSpinner = false;
 
-  async function handleSubmit(value: string) {
+  async function handleSubmit(event: any) {
+    const value = event.detail;
+    console.log('the value is!', value);
+
     if (value !== '') {
       showSpinner = true;
       try {
@@ -38,19 +36,21 @@
 <main>
   <div class="container" style="position: fixed; inset: 0; display: flex; justify-content: center; ">
     <div>
+      <div>
       <h2>Create Campaign</h2>
       <PromptInput on:submit={handleSubmit} />
       <div style="margin-left:0; padding-left: 0; margin-top: 0; display:block; width:500px;" class="blurb">Use the prompt to search for creative </div>
     </div>
-
-    {#if images}
-      <div class="image-gallery">
-        {#each images as image}
-          <img src={image.url} alt="ai"/>
-        {/each}
-      </div>
-    {/if}
+    </div>
   </div>
+
+  {#if images}
+    <div class="image-gallery">
+      {#each images as image}
+        <img src={image.url} alt="ai"/>
+      {/each}
+    </div>
+  {/if}
 </main>
 
 <div>
@@ -76,31 +76,33 @@
   }
 
   .container {
-    overflow: hidden;
-    display: block;
+    padding-left: 15%;
+    width: 100%;
     display: flex;
     justify-content: center;
-    margin-left: 400px;
   }
 
   .container div {
-    box-sizing: border-box;
     width: 100%;
     padding: 10px;
-    float: center;
+    display: flex;
+    flex-direction: column;
   }
 
   .image-gallery {
+    position: absolute;
+    top: 25%;
     width: 100%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     gap: 10px;
   }
 
   .image-gallery img {
-    max-width: 70%;
+    max-width: 18%;
     height: auto;
+    border-radius: 20%;
   }
   .input {
     border: none;
