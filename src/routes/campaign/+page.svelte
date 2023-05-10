@@ -89,15 +89,20 @@
     flex-direction: column;
   }
 
-  .image-gallery {
-    position: absolute;
-    top: 25%;
+.image-gallery {
+  position: absolute;
+  top: 25%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+}
+  /* .image-gallery {
     width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-  }
+    flex-direction: wrap;
+  } */
 
   .image-gallery img {
     max-width: 18%;
