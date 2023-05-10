@@ -7,9 +7,7 @@
 
   function handleSubmit(event) {
     event.preventDefault();
-    console.log('Submitted value:', inputValue, ":");
     inputValue = inputValue.trim();
-    console.log('Trimmed value:', inputValue, ":");
 
     if (inputValue !== '') {
       dispatch('submit', inputValue);

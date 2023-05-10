@@ -4,8 +4,6 @@ const apiUrl = dev ? 'http://localhost:8080/api' : 'https://bianosaurus.com/api'
 
 
 export async function getImages(prompt) {
-  console.log('prompt', prompt);
-
   const payload = {
     jsonrpc: '2.0',
     method: 'generate_image',

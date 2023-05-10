@@ -16,7 +16,6 @@
 
   async function handleSubmit(event: any) {
     const value = event.detail;
-    console.log('the value is!', value);
 
     if (value !== '') {
       showSpinner = true;
@@ -109,22 +108,6 @@
     height: auto;
     border-radius: 20%;
   }
-  .input {
-    border: none;
-    border-radius: 4px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
-    font-size: 16px;
-    padding: 10px 20px;
-    width: 100%;
-    margin-bottom: 10px;
-    height: 40px;
-  }
-
-  .input:focus {
-    outline: none;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-  }
-
   main {
     display: flex;
     justify-content: center;
@@ -136,22 +119,6 @@
 
   h2 {
     margin-bottom: 1rem;
-  }
-  
-  html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-  input {
-    width: 100%;
-    height: 150px;
-    border: 1px solid #ccc;
-    padding: 0.5rem;
-    font-size: 1rem;
-    border-radius: 5px;
-    resize: vertical;
   }
 </style>
 
