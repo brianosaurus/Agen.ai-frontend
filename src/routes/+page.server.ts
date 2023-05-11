@@ -13,7 +13,8 @@ const whitelist = [
   '12bscsssiddiqui@seecs.edu.pk',
   'keith@hoerling.com',
   'brianav8r@gmail.com',
-  'phattytuna@gmail.com'
+  'phattytuna@gmail.com',
+  'niko@agen.ai'
 ]
 
 async function verifyGoogleToken(token: string) {
